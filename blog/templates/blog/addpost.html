@@ -1,0 +1,62 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Contact Us {% endblock %}
+{% block body %}
+
+
+ <div class="container my-3">
+
+     <h3>Add Post</h3>
+     <form action="/blog/addpost" method="post">{% csrf_token %}
+  <div class="form-group">
+    <label for="name"><b>Title</b></label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+  </div>
+    <div class="form-group">
+    <label for="name"><b>Head 0</b></label>
+    <input type="text" class="form-control" id="head0" name="head0" placeholder="Head 0">
+  </div>
+          <div class="form-group">
+    <label for="name"><b>Content Head 0</b></label>
+    <input type="text" class="form-control" id="chead0" name="chead0" placeholder="Content Head 0">
+  </div>
+
+  <div class="form-group">
+    <label for="name"><b>Head 1</b></label>
+    <input type="text" class="form-control" id="head1" name="head1" placeholder="Head 1">
+  </div>
+          <div class="form-group">
+    <label for="name"><b>Content Head 1</b></label>
+    <input type="text" class="form-control" id="chead1" name="chead1" placeholder="Content Head 1">
+  </div>
+
+  <div class="form-group">
+    <label for="name"><b>Head 2</b></label>
+    <input type="text" class="form-control" id="head2" name="head2" placeholder="Head 2">
+  </div>
+          <div class="form-group">
+    <label for="name"><b>Content Head 2</b></label>
+    <input type="text" class="form-control" id="chead2" name="chead2" placeholder="Content Head 2">
+  </div>
+
+<div class="form-group">
+  <label for="name"><b>Publish Date</b></label>
+  <input type="date" class="form-control" id="pub_date" name="pub_date" placeholder="Publish Date">
+</div>
+
+<div class="form-group">
+  <label for="image"><b>Upload Image</b></label>
+  <input type="file" class="form-control-file" id="thumbnail" name="thumbnail">
+</div>
+
+         
+  <button  type="submit" id = "addpostSubmit" class="btn btn-success">Submit</button>
+{% endblock %}
+
+{% block js %}
+<script>
+$('#addpostSubmit').click(function() {
+    alert('Success');
+});
+</script>
+
+{% endblock %}

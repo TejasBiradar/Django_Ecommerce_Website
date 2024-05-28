@@ -1,0 +1,38 @@
+{%extends 'blog/basic.html'%}
+
+{%block body%}
+<div class="container mt-3">
+    <div style="display: flex; justify-content: flex-end;" >
+      <a href="/blog/addpost"><button type="button" class="btn btn-primary">Add Post</button></a>
+    
+    </div>
+<div class="row my-2">
+    {% for i in posts%}
+     <a href="/blog/blogpost/{{i.post_id}}"><div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Blog</strong>
+          <h3 class="mb-0">{{i.title}}</h3>
+          <div class="mb-1 text-muted">{{i.pub_date}}</div>
+
+
+          <a href="/blog/blogpost/{{i.post_id}}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+            <img src='/media/shop/images/{{i.thumbnail}}'  width="120" height="120" class="card-img-top" alt="...">   
+        </div>
+    </a>
+    </div>
+</div>
+    {% endfor %}
+    
+
+
+
+
+
+  </div>
+
+  </div>
+
+{%endblock%}
